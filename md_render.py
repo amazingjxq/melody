@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-"""markdown2html
+"""md_render
 
 Usage:
-    markdown2html.py <md> <html_path>
+    md_render.py <md>
 """
 from docopt import docopt
 import markdown
@@ -96,7 +96,7 @@ def write_html(md_path, html_path, html_content):
     html_fd.close()
 
 
-def process(md_path, html_path):
+def process(md_path):
     # md_fd = open(md_path, 'r')
     # md_content = md_fd.read().decode("utf-8")
 
@@ -113,7 +113,7 @@ def process(md_path, html_path):
 
 def main():
     args = docopt(__doc__, version='0.1')
-    process(args['<md>'], args['<html_path>'])
+    process(args['<md>'])
 
 if __name__ == '__main__':
     main()
