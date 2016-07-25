@@ -27,7 +27,7 @@ class MelodyRender:
         self.styles = list(get_all_styles())
         self.rendered_html = ''
 
-    def render(self, template, style):
+    def render(self, template='github', style='tango'):
         if template not in self.templates:
             raise MDRenderException('Invalid template')
 
@@ -46,17 +46,11 @@ class MelodyRender:
                                             code_css=code_css).encode("utf-8")
             return self.rendered_html
 
-    def export(self):
-        pass
+    def export(self, html_file):
+        html_fd = open(html_file, "w")
+        html_fd.write(html_content.encode("utf-8"))
+        html_fd.close()
 
-def write_html(md_path, html_path, html_content):
-    path, md_path_base = os.path.split(md_path)
-    md_path_base_file, md_path_base_extension = os.path.splitext(md_path_base)
-
-    html_file = os.path.join(html_path, md_path_base_file + ".html")
-    html_fd = open(html_file, "w")
-    html_fd.write(html_content.encode("utf-8"))
-    html_fd.close()
 
 def joke():
     return (u'Wenn ist das Nunst\u00fcck git und Slotermeyer? Ja! ... '
