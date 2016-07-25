@@ -6,6 +6,7 @@ import shutil
 from pygments.styles import get_style_by_name
 from pygments.styles import get_all_styles
 from pygments.formatters import HtmlFormatter
+from melody.extensions import ImgStaticLinkExtension
 
 
 class MelodyRenderException(Exception):
@@ -19,7 +20,9 @@ class MelodyRender:
         self.extensions = [
             "markdown.extensions.codehilite",
             "markdown.extensions.tables",
-            "markdown.extensions.fenced_code"]
+            "markdown.extensions.fenced_code",
+            ImgStaticLinkExtension(),
+        ]
         self.env = Environment(loader=PackageLoader('melody', 'templates'))
         self.templates = {
             'github': 'github.html',
