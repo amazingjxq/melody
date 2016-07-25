@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """melody
 Usage:
-    melody render <markdown-file> [<listen-addr>] [<static-dir>]
+    melody render <markdown-file> [<listen-addr>] [--static-dir=<dir>]
 
 """
 import docopt
@@ -13,4 +13,4 @@ def main():
 
     if args['render']:
         melody.svr.run_server(args['<markdown-file>'],
-                              args['<static-dir>'])
+                              args['--static-dir'])
