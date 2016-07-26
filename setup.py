@@ -4,7 +4,7 @@ setup(
     name='melody',
     version='0.1',
     description='A realtime markdown render',
-    url='http://github.com/storborg/funniest',
+    url='http://github.com/amazingjxq/melody',
     author='Xuqing Jia',
     author_email='amazingjxq@gmail.com',
     license='MIT',
