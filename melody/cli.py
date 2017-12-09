@@ -3,6 +3,8 @@
 Usage:
     melody render <markdown-file> [<listen-addr>] [--static-dir=<dir>]
 
+Options:
+    --static-dir=<dir>   directory where you put images
 """
 import docopt
 import melody.core

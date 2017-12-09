@@ -26,6 +26,7 @@ class MelodyRender:
         self.env = Environment(loader=PackageLoader('melody', 'templates'))
         self.templates = {
             'github': 'github.html',
+            'wechat': 'wechat.html',
         }
         self.styles = list(get_all_styles())
         self.rendered_html = ''
